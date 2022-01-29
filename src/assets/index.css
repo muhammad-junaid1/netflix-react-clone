@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica", Arial;
+}
+
+:root {
+  --main-color: #f00c17;
+  --secondary-color: #242424;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+img {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+img:hover {
+  transform: scale(1.04);
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  background: var(--secondary-color);
+  color: white;
+}
+
+/******************* Navbar Styles ******************/
+
+.navbar {
+  background: black;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.navbar .navbar-content {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-content-left,
+.navbar-content-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navbar-content-left .logo img {
+  width: 100px;
+  position: relative;
+  top: 5px;
+  margin-right: 30px;
+}
+
+.navbar .navbar-content-left button {
+  background: transparent;
+  padding: 5px 15px;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+.navbar .navbar-content-left .genres-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar .navbar-content-left .dropdown {
+  position: absolute;
+  width: 240px;
+  margin-left: 10px;
+  display: flex;
+  background: var(--secondary-color);
+  flex-wrap: wrap;
+  margin-top: 5px;
+  padding: 20px 0px 10px 20px;
+  border: 1px solid white;
+}
+
+.navbar .navbar-content-left .dropdown a {
+  padding: 6px 0;
+  width: 45%;
+}
+
+.navbar .navbar-content-left .dropdown a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--main-color);
+  text-decoration-thickness: 3px;
+}
+
+.navbar .navbar-content-right form input {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  margin-left: 10px;
+  background: #292929;
+  color: white;
+}
+
+.navbar .navbar-content-right form input::placeholder {
+  font-weight: bold;
+  color: #ccc;
+}
+
+.navbar .navbar-content-right img {
+  width: 30px;
+  margin: 0 10px 0 40px;
+}
+
+/******************* Banner Styles ******************/
+
+.banner-wrapper {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  margin-top: 45px;
+  position: relative;
+}
+
+.banner-wrapper::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9) 20%,
+    transparent
+  );
+  z-index: 5;
+}
+
+.banner-content-wrapper {
+  width: 85%;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.banner-content {
+  width: 50%;
+}
+
+.banner-content h1 {
+  font-size: 50px;
+  width: 85%;
+}
+
+.banner-content .movie-information {
+  margin: 15px 0;
+}
+
+.banner-content .movie-information span {
+  padding-right: 14px;
+  font-size: 15px;
+  color: #a3a3a3;
+}
+
+.banner-content .genre:hover {
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.banner-content p {
+  width: 80%;
+  margin-bottom: 20px;
+  color: rgb(224, 223, 223);
+  font-size: 15px;
+}
+
+.banner-content .buttons {
+  display: flex;
+}
+
+.banner-content .watch-button {
+  padding: 14px 24px;
+  transition: all 0.2s ease-in-out;
+  margin: 15px 10px 30px 0;
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  background: white;
+}
+
+.banner-content .watch-button:disabled {
+  background: #ddd;
+  cursor: not-allowed;
+}
+
+.banner-content .cast {
+  width: 60%;
+}
+.banner-content .cast span {
+  font-size: 14px;
+}
+
+/* ************ Genre Movies ***************/
+
+.movies-rows-wrapper {
+  padding: 60px 0;
+}
+.movies-rows-content-wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.movies-row {
+  margin-bottom: 30px;
+}
+
+.movies-row h1 {
+  font-size: 25px;
+}
+
+.movies-row-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movies-row-header a {
+  color: var(--main-color);
+}
+
+.movies-row-images {
+  display: flex;
+  overflow: scroll;
+  padding: 15px;
+  align-items: center;
+}
+.movies-row-images::-webkit-scrollbar {
+  display: none;
+}
+
+.movies-row-images img {
+  width: 200px;
+  margin-right: 12px;
+}
+
+/*****************  Movies Gallery ****************/
+.movies-wrapper {
+  margin-top: 50px;
+  min-height: 85vh;
+}
+.movies-content {
+  padding: 60px 0;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.movies-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.movies-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.movies-images img {
+  width: 205px;
+  margin: 10px;
+}
+.pages-links {
+  text-align: center;
+  margin-top: 40px;
+}
+.pages-links a {
+  color: white;
+  padding: 8px 16px;
+  margin: 0 8px;
+  background: var(--main-color);
+}
+
+/*****************  Single Movie page ****************/
+
+.single-movie-wrapper {
+  margin-top: 50px;
+}
+.single-movie-wrapper .movies-wrapper {
+  margin-top: 0;
+}
+
+/*****************  Footer ****************/
+.footer {
+  text-align: center;
+  background: black;
+  color: white;
+  padding: 15px 0;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  z-index: 100;
+}
+
+.trailer-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.9);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trailer-popup-video {
+  position: relative;
+}
+
+.popup-cross-icon {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.error-404-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  height: 90vh;
+  justify-content: center;
+}
+.error-404-wrapper h1 {
+  font-size: 100px;
+  color: var(--main-color);
+}
